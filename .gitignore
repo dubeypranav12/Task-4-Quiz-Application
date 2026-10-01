@@ -1,0 +1,9 @@
+# Vercel-generated files
+.vercel/
+
+# Operating system and editor files
+.DS_Store
+Thumbs.db
+.vscode/
+*.swp
+*.swo

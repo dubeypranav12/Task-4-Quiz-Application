@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A responsive ten-question general knowledge quiz.">
+  <title>Tenfold Quiz</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%231f5b4f'/%3E%3Cpath d='M20 20h24v8H20zm0 16h16v8H20z' fill='%23fffaf0'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <header class="site-header">
+    <a class="brand" href="#top" aria-label="Tenfold Quiz home">
+      <span class="brand-mark" aria-hidden="true">10</span>
+      <span>Tenfold Quiz</span>
+    </a>
+    <button class="theme-button" id="themeButton" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+      <span aria-hidden="true">◐</span>
+      <span class="theme-label">Dark</span>
+    </button>
+  </header>
+
+  <main id="top">
+    <section class="intro" aria-labelledby="pageTitle">
+      <div>
+        <p class="eyebrow">General knowledge · 10 questions</p>
+        <h1 id="pageTitle">How much do you know?</h1>
+        <p class="intro-copy">Choose one answer for each question, then submit when you are ready.</p>
+      </div>
+      <div class="answer-status" aria-live="polite">
+        <span id="answeredCount">0 of 10 answered</span>
+        <div class="progress-track" role="progressbar" aria-label="Questions answered" aria-valuemin="0"
+          aria-valuemax="10" aria-valuenow="0">
+          <span id="progressBar"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="quiz-shell" aria-label="Quiz questions">
+      <div class="status-panel" id="statusPanel" role="status" aria-live="polite">
+        <span class="loader" aria-hidden="true"></span>
+        <p id="statusMessage">Loading your questions…</p>
+      </div>
+
+      <form id="quizForm" hidden>
+        <div id="questionList"></div>
+        <div class="form-actions">
+          <p id="formMessage" class="form-message" aria-live="polite"></p>
+          <button class="primary-button" id="submitButton" type="submit">Submit quiz</button>
+        </div>
+      </form>
+
+      <section class="result-panel" id="resultPanel" aria-labelledby="resultTitle" hidden>
+        <p class="eyebrow">Quiz complete</p>
+        <h2 id="resultTitle">Your result</h2>
+        <p class="score" id="scoreText"></p>
+        <p class="result-copy" id="resultCopy"></p>
+        <button class="secondary-button" id="restartButton" type="button">Try a new set</button>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>Questions supplied by Open Trivia Database.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
